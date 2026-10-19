@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* edept brand */
+  --font-display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --font-sans: "DM Sans Variable", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-blue: #12539f;
+  --color-brand-sky: #c5daf1;
+  --color-brand-gray: #e5e7eb;
+  --color-brand-orange: #eda130;
+  --color-brand-red: #b80f0a;
+  /* brand sky #C5DAF1 at ~30% over white, for large light panels */
+  --color-brand-mist: #eef4fb;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--site-chrome-h, 5rem);
+}
+
+/* Desktop: settle gently on each one-screen section */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-brand-blue);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 76px; /* room for the mobile register bar */
+  }
+}
